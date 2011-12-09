@@ -1,8 +1,10 @@
 package ChatServeur;
 
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.SortedSet;
 
 public class ChatServeurImpl implements ChatServeurInterface {
 
@@ -26,5 +28,23 @@ public class ChatServeurImpl implements ChatServeurInterface {
 			System.err.println("ChatServeur exception:");
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public boolean login(String id) throws RemoteException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean logout(String id) throws RemoteException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public SortedSet<Message> updateMessage() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
