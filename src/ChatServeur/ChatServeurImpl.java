@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.SortedSet;
 
 public class ChatServeurImpl implements ChatServeurInterface {
+	private SortedSet<Message> messages;
 
 	public ChatServeurImpl() {
 		super();

@@ -3,13 +3,13 @@ package ChatServeur;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Message implements Serializable{
+public class Message implements Serializable, Comparable<Message> {
 	private int idMessage;
 	private String idPersonne;
 	private String corps;
 	private Date date;
-	
-	public Message (String idPersonne, String corps, Date date){
+
+	public Message(String idPersonne, String corps, Date date) {
 		this.idMessage = IdMessageCreator.getInstance().getNewMessageId();
 		this.idPersonne = idPersonne;
 		this.corps = corps;
@@ -42,6 +42,16 @@ public class Message implements Serializable{
 	 */
 	public Date getDate() {
 		return date;
+	}
+
+	public int compareTo(Message message) {
+		if (this.getIdMessage() > message.getIdMessage()) {
+			return 1;
+		} else if (this.getIdMessage() > message.getIdMessage()) {
+			return 0;
+		} else {
+			return -1;
+		}
 	}
 
 }
